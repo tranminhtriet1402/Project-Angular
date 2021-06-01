@@ -1,0 +1,39 @@
+.fluid-container {
+  background-color: #e4bad4;
+  color: #fdfaf6;
+  .container {
+    height: 50px;
+    .right {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .center {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      a {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        color: white;
+        padding-left: 5px;
+        padding-right: 5px;
+        text-decoration: none;
+      }
+      a:hover {
+        background-color: #f5abc9;
+      }
+    }
+  }
+}
+
+.isSelected {
+  background-color: #f5abc9;
+}
+
+@media only screen and (max-width: 480px) {
+}
+
+@media only screen and (max-width: 768px) {
+}

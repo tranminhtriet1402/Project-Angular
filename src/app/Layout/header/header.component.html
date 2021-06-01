@@ -1,1 +1,63 @@
-<p>header works!</p>
+<!-- <div class="header">
+  <div class="container center-header">
+    <div class="right">
+      <img src="/assets/images/logo.jpg" />
+      <span class="text-20px">Shoe Store</span>
+    </div>
+    <div class="center text-16px">
+      <a style="background-color: #ff96ad"><span>Men</span></a>
+      <a>Women</a>
+      <a>Running</a>
+      <a>Kid</a>
+      <a>Sales</a>
+    </div>
+    <div class="left text-14px">
+      <img src="/assets/images/person.jpeg" class="img-person" />
+      <span>Trần Minh Triết</span>
+      <img src="/assets/icon/u_setting.svg" class="img-icon" />
+    </div>
+  </div>
+</div> -->
+
+<div class="fluid-container">
+  <div class="container">
+    <div class="row" style="height: 100%">
+      <div class="col-3 right">
+        <img
+          src="/assets/images/logo.jpg"
+          style="height: 30px; width: 30px; border-radius: 4px"
+        />
+        <span class="text-20px">Shoe Store</span>
+      </div>
+
+      <div class="col-6 center">
+        <a routerLink="/Home" routerLinkActive="isSelected"
+          ><span>Trang Chủ</span></a
+        >
+        <a routerLink="/shoe-man" routerLinkActive="isSelected"
+          ><span>Giày Nam</span></a
+        >
+        <a routerLink="/shoe-woman" routerLinkActive="isSelected"
+          ><span>Giày Nữ</span></a
+        >
+        <a routerLink="/shoe-sport" routerLinkActive="isSelected"
+          ><span>Giày Thể Thao</span></a
+        >
+      </div>
+      <div
+        class="col-3"
+        style="display: flex; align-items: center; justify-content: flex-end"
+      >
+        <img
+          src="/assets/images/person.jpeg"
+          style="height: 30px; width: 30px; border-radius: 50%"
+          class="img-person"
+        />
+        <span style="margin-left: 10px; margin-right: 10px"
+          >Trần Minh Triết</span
+        >
+        <img src="/assets/icon/u_setting.svg" class="img-icon" />
+      </div>
+    </div>
+  </div>
+</div>
