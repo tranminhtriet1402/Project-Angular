@@ -9,6 +9,11 @@ import { ProductShoeWomenComponent } from './Component/product-component/product
 import { ProductComponentComponent } from './Component/product-component/product-component.component';
 import { ProductShowSportComponent } from './Component/product-component/product-show-sport/product-show-sport.component';
 import { CategoryService } from './API/category.service';
+import { StoreManagementComponent } from './Component/store-management/store-management.component';
+import { DashboardManagementComponent } from './Component/store-management/dashboard-management/dashboard-management.component';
+import { CategoryManagementComponent } from './Component/store-management/category-management/category-management.component';
+import { ProductManagementComponent } from './Component/store-management/product-management/product-management.component';
+import { ModalComponentComponent } from './Shared/modal-component/modal-component.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +22,11 @@ import { CategoryService } from './API/category.service';
     ProductShoeManComponent,
     ProductShoeWomenComponent,
     ProductShowSportComponent,
+    StoreManagementComponent,
+    DashboardManagementComponent,
+    CategoryManagementComponent,
+    ProductManagementComponent,
+    ModalComponentComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, LayOutModule, HttpClientModule],
   providers: [CategoryService],
