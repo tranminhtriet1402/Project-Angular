@@ -7,27 +7,27 @@ body {
 
 .text-35px {
   font-size: 35px;
-  font-family: "Times New Roman", Times, serif;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 .text-24px {
   font-size: 24px;
-  font-family: "Times New Roman", Times, serif;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 .text-20px {
   font-size: 20px;
-  font-family: "Times New Roman", Times, serif;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 .text-14px {
-  font-family: "Times New Roman", Times, serif;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
   font-size: 14px;
 }
 .text-16px {
-  font-family: "Times New Roman", Times, serif;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
   font-size: 16px;
 }
 .text-12px {
-  font-family: "Times New Roman", Times, serif;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
   font-size: 12px;
 }
 .contain {
@@ -80,3 +80,6 @@ body {
     padding-right: 10px;
   }
 }
+
+// html, body { height: 100%; }
+// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

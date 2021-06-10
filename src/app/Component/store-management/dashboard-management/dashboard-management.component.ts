@@ -55,7 +55,7 @@ export class DashboardManagementComponent implements OnInit {
   }
   dounghnutChart() {
     const data = {
-      labels: ['Red', 'Blue', 'Yellow'],
+      labels: ['Hàng hóa', 'Đơn hàng', 'khách hàng'],
       datasets: [
         {
           label: 'My First Dataset',

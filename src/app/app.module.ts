@@ -14,6 +14,7 @@ import { DashboardManagementComponent } from './Component/store-management/dashb
 import { CategoryManagementComponent } from './Component/store-management/category-management/category-management.component';
 import { ProductManagementComponent } from './Component/store-management/product-management/product-management.component';
 import { ModalComponentComponent } from './Shared/modal-component/modal-component.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,13 @@ import { ModalComponentComponent } from './Shared/modal-component/modal-componen
     ProductManagementComponent,
     ModalComponentComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, LayOutModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    LayOutModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+  ],
   providers: [CategoryService],
   bootstrap: [AppComponent],
 })

@@ -1,0 +1,86 @@
+table {
+  table-layout: fixed;
+  border-collapse: separate;
+  width: 100%;
+
+  thead {
+    tr {
+      height: 40px;
+      background-color: #ff96ad;
+      th {
+        color: #fff5fd;
+        padding: 10px 12px;
+      }
+    }
+  }
+  tbody {
+    tr {
+      height: 40px;
+
+      td {
+        padding: 10px 12px;
+      }
+    }
+  }
+}
+
+.btn::ng-deep {
+  border-radius: 50%;
+}
+.btn-primary::ng-deep {
+  background-color: #ff96ad;
+  border-color: #ff96ad;
+  box-shadow: none;
+}
+
+.col-stt {
+  width: 40px;
+  text-align: center;
+  border-top: 1px solid #005a8d;
+  border-bottom: 1px solid #005a8d;
+  border-left: 1px solid #005a8d;
+}
+.col-name {
+  width: 200px;
+  border-top: 1px solid #005a8d;
+  border-left: 1px solid #005a8d;
+  border-bottom: 1px solid #005a8d;
+}
+.col-code {
+  width: 200px;
+  border-top: 1px solid #005a8d;
+  border-left: 1px solid #005a8d;
+  border-bottom: 1px solid #005a8d;
+}
+.col-note {
+  width: 300px;
+  border-top: 1px solid #005a8d;
+  border-left: 1px solid #005a8d;
+  border-bottom: 1px solid #005a8d;
+}
+.col-handle {
+  width: 100px;
+  border-top: 1px solid #005a8d;
+  border-left: 1px solid #005a8d;
+  border-right: 1px solid #005a8d;
+  border-bottom: 1px solid #005a8d;
+}
+
+.td-stt {
+  border-bottom: 1px solid #005a8d;
+  border-left: 1px solid #005a8d;
+  text-align: center;
+}
+
+.td-name,
+.td-code,
+.td-note {
+  border-bottom: 1px solid #005a8d;
+  border-left: 1px solid #005a8d;
+  text-align: left;
+}
+.td-handle {
+  border-bottom: 1px solid #005a8d;
+  border-left: 1px solid #005a8d;
+  border-right: 1px solid #005a8d;
+}

@@ -1,15 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-category-management',
   templateUrl: './category-management.component.html',
-  styleUrls: ['./category-management.component.scss']
+  styleUrls: ['./category-management.component.scss'],
 })
 export class CategoryManagementComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
