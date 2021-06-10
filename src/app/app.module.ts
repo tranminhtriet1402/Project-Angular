@@ -15,6 +15,7 @@ import { CategoryManagementComponent } from './Component/store-management/catego
 import { ProductManagementComponent } from './Component/store-management/product-management/product-management.component';
 import { ModalComponentComponent } from './Shared/modal-component/modal-component.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PaginationComponentComponent } from './Shared/pagination-component/pagination-component.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CategoryManagementComponent,
     ProductManagementComponent,
     ModalComponentComponent,
+    PaginationComponentComponent,
   ],
   imports: [
     BrowserModule,
