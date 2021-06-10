@@ -1,5 +1,5 @@
 .fluid-container {
-  background-color: #e4bad4;
+  background-color: #ff96ad;
   color: #fdfaf6;
   .container {
     height: 50px;
@@ -20,16 +20,17 @@
         padding-left: 5px;
         padding-right: 5px;
         text-decoration: none;
+        gap: 4px;
       }
       a:hover {
-        background-color: #f5abc9;
+        color: #e93b81;
       }
     }
   }
 }
 
 .isSelected {
-  background-color: #f5abc9;
+  color: #e93b81 !important;
 }
 
 @media only screen and (max-width: 480px) {

@@ -4,6 +4,10 @@ import { ProductComponentComponent } from './Component/product-component/product
 import { ProductShoeManComponent } from './Component/product-component/product-shoe-man/product-shoe-man.component';
 import { ProductShoeWomenComponent } from './Component/product-component/product-shoe-women/product-shoe-women.component';
 import { ProductShowSportComponent } from './Component/product-component/product-show-sport/product-show-sport.component';
+import { CategoryManagementComponent } from './Component/store-management/category-management/category-management.component';
+import { DashboardManagementComponent } from './Component/store-management/dashboard-management/dashboard-management.component';
+import { ProductManagementComponent } from './Component/store-management/product-management/product-management.component';
+import { StoreManagementComponent } from './Component/store-management/store-management.component';
 
 import { MainLayoutComponent } from './Layout/main-layout/main-layout.component';
 
@@ -31,6 +35,25 @@ const routes: Routes = [
       {
         path: 'shoe-sport',
         component: ProductShowSportComponent,
+      },
+      {
+        path: 'store-management',
+        component: StoreManagementComponent,
+        children: [
+          {
+            path: '',
+            component: DashboardManagementComponent,
+          },
+
+          {
+            path: 'product-management',
+            component: ProductManagementComponent,
+          },
+          {
+            path: 'category-management',
+            component: CategoryManagementComponent,
+          },
+        ],
       },
     ],
   },
