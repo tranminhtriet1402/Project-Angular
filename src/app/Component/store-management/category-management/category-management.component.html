@@ -1,3 +1,7 @@
+<div class="row">
+  <div><span>Quản lý loại giày</span></div>
+  <div><button (click)="addCategory()">Thêm mới</button></div>
+</div>
 <div style="overflow-x: auto">
   <table [cellSpacing]="0" [cellPadding]="0">
     <thead>
@@ -10,11 +14,11 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td class="td-stt">1</td>
-        <td class="td-name">1</td>
-        <td class="td-code">1</td>
-        <td class="td-note">1</td>
+      <tr *ngFor="let cate of category; let i = index">
+        <td class="td-stt">{{ i + 1 }}</td>
+        <td class="td-name">{{ cate.nameCategory }}</td>
+        <td class="td-code">{{ cate.codeCategory }}</td>
+        <td class="td-note">{{ cate.descriptions }}</td>
         <td class="td-handle">
           <div
             style="
@@ -63,4 +67,8 @@
     </tbody>
   </table>
 </div>
+
 <app-pagination-component></app-pagination-component>
+
+<app-modal-component [isOpen]="isOpen" (editModal)="close($event)">
+</app-modal-component>

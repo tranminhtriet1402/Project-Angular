@@ -1,4 +1,26 @@
-<div class="over-play"></div>
-<div class="content">
-  <ng-content></ng-content>
+<div *ngIf="isOpen" class="modal-bg-overlay" (click)="close(null)"></div>
+
+<div *ngIf="isOpen" class="modal-container">
+  <div
+    style="
+      display: flex;
+      justify-content: space-between;
+      padding: 5px;
+      border-bottom: 1px solid grey;
+    "
+  >
+    <div>
+      <h2>{{ title }}</h2>
+    </div>
+    <div>
+      <img
+        src="assets/icon/u_close.svg"
+        (click)="close(null)"
+        style="cursor: pointer"
+      />
+    </div>
+  </div>
+  <div class="modal-content">
+    <ng-content></ng-content>
+  </div>
 </div>

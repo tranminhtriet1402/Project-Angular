@@ -1,0 +1,34 @@
+.modal-bg-overlay {
+  background: #041826;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.2;
+  right: 0;
+}
+.modal-container {
+  max-width: 700px;
+
+  animation-timing-function: ease;
+  animation-duration: 300ms;
+  position: fixed;
+  left: 0;
+  right: 0;
+  background-color: white;
+  padding: 0;
+  margin: auto;
+  border: none;
+  will-change: top, opacity;
+  border-radius: 8px;
+  box-shadow: 2px 4px 6px 0 rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  transform: translateY(-50%);
+  //   &.top-center {
+  //
+  //   }
+  .modal-content {
+    border: 0px !important;
+    height: auto;
+  }
+}
