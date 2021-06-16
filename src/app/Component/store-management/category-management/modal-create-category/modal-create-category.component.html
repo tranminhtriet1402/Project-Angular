@@ -1,0 +1,62 @@
+<form [formGroup]="formcreate">
+  <div class="row" style="margin-top: 10px">
+    <div class="col-12 col-md-6">
+      <div class="input-form">
+        <span class="text-14px"
+          >Tên phân loại <span class="error">*</span></span
+        >
+        <input
+          type="text"
+          placeholder="Nhập tên phân loại"
+          class="form-control"
+          formControlName="name"
+        />
+        <!-- <span> erorr</span> -->
+      </div>
+    </div>
+    <div class="col -12 col-md-6">
+      <div class="input-form">
+        <span class="text-14px">Mã phân loại <span class="error">*</span></span>
+        <input
+          type="text"
+          placeholder="Nhập mã phân loại"
+          class="form-control"
+          formControlName="code"
+        />
+        <!-- <span> erorr</span> -->
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="input-form">
+        <span class="text-14px">Mô tả</span>
+        <textarea
+          rows="5"
+          type="text"
+          class="form-control"
+          placeholder="Nhập mô tả"
+          formControlName="descriptions"
+        ></textarea>
+        <!-- <span> erorr</span> -->
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div
+      class="col-12"
+      style="
+        display: flex;
+        gap: 8px;
+        margin: 10px 0;
+        flex-direction: row-reverse;
+      "
+    >
+      <button type="button" class="btn btn-option" (click)="optionCategory()">
+        {{ optionButton }}
+      </button>
+      <button type="button" class="btn btn-cancel" (click)="edmitModal(null)">
+        Hủy
+      </button>
+    </div>
+  </div>
+  <img src="https://localhost:44370/upload/sadasd.png" />
+</form>

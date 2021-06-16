@@ -16,6 +16,9 @@ import { ProductManagementComponent } from './Component/store-management/product
 import { ModalComponentComponent } from './Shared/modal-component/modal-component.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PaginationComponentComponent } from './Shared/pagination-component/pagination-component.component';
+import { ModalCreateCategoryComponent } from './Component/store-management/category-management/modal-create-category/modal-create-category.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -30,6 +33,7 @@ import { PaginationComponentComponent } from './Shared/pagination-component/pagi
     ProductManagementComponent,
     ModalComponentComponent,
     PaginationComponentComponent,
+    ModalCreateCategoryComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,6 +41,9 @@ import { PaginationComponentComponent } from './Shared/pagination-component/pagi
     LayOutModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
+    ToastrModule.forRoot({ positionClass: 'toast-bottom-left', timeOut: 3000 }),
   ],
   providers: [CategoryService],
   bootstrap: [AppComponent],

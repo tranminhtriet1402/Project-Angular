@@ -8,17 +8,7 @@ import { Category } from 'src/app/Models/category';
   styleUrls: ['./product-component.component.scss'],
 })
 export class ProductComponentComponent implements OnInit {
-  category: Category[];
-  constructor(private categoryService: CategoryService) {}
+  constructor() {}
 
-  ngOnInit(): void {
-    this.getAllCategory();
-  }
-
-  getAllCategory() {
-    this.categoryService.getAllCategory().subscribe((res) => {
-      this.category = res as Category[];
-      console.log(this.category);
-    });
-  }
+  ngOnInit(): void {}
 }

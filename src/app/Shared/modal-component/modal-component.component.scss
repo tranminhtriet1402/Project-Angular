@@ -9,17 +9,16 @@
 }
 .modal-container {
   max-width: 700px;
-
   animation-timing-function: ease;
   animation-duration: 300ms;
   position: fixed;
   left: 0;
   right: 0;
+  top: 50%;
   background-color: white;
   padding: 0;
   margin: auto;
-  border: none;
-  will-change: top, opacity;
+
   border-radius: 8px;
   box-shadow: 2px 4px 6px 0 rgba(0, 0, 0, 0.1);
   z-index: 9999;
@@ -30,5 +29,6 @@
   .modal-content {
     border: 0px !important;
     height: auto;
+    padding: 0 12px;
   }
 }

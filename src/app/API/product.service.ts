@@ -2,31 +2,33 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { environment } from 'src/environments/environment';
-import { Category } from '../Models/category';
+
 import { Observable } from 'rxjs';
+import { Product } from '../Models/product';
 
 @Injectable({
   providedIn: 'root',
 })
-export class CategoryService {
+export class ProductService {
   constructor(private http: HttpClient) {}
-  // : Observable<Category>
+
   //has check
-  getAllCategory() {
+  getAllProuct() {
     return this.http.get(environment.backend + '/Categories/');
   }
   //has check
-  getCategoryID(id: number) {
+  getProuctID(id: number) {
     return this.http.get(environment.backend + '/Categories/' + id);
   }
   //has check
-  addCategory(category: Category) {
-    return this.http.post(environment.backend + '/Categories/', category);
+  addProuct(product: Product) {
+    return this.http.post(environment.backend + '/Categories/', product);
   }
-  deleteCategoryID(id: number) {
+  deleteProuctID(id: number) {
     return this.http.delete(environment.backend + '/Categories/' + id);
   }
-  updateCategoryID(id: number, category: Category) {
-    return this.http.put(environment.backend + '/Categories/' + id, category);
+  updateProuctID(id: number, product: Product) {
+    return this.http.put(environment.backend + '/Categories/' + id, product);
   }
+  updateImageProduct(id: number, product: Product) {}
 }
