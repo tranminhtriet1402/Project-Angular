@@ -1,1 +1,128 @@
-<p>product-management works!</p>
+<div class="row">
+  <div><span class="text-24px">Quản lý sản phẩm</span></div>
+  <div><button class="btn btn-add" (click)="open(null)">Thêm mới</button></div>
+</div>
+<div style="overflow-x: auto; margin-top: 10px">
+  <table [cellSpacing]="0" [cellPadding]="0">
+    <thead>
+      <tr>
+        <th class="col-stt">#</th>
+        <th class="col-name">Tên giày</th>
+        <th class="col-code">Mã giày</th>
+
+        <th class="col-price">Giá</th>
+
+        <th class="col-note">Ghi chú</th>
+        <th class="col-handle">Thao tác</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pro of product; let i = index">
+        <td class="td-stt">{{ i + 1 }}</td>
+        <td class="td-name">
+          <img
+            [src]="urlImage + pro.images"
+            width="50"
+            height="50"
+            style="border-radius: 10px"
+          />
+          {{ pro.nameProduct }}
+        </td>
+        <td class="td-code">{{ pro.codeProduct }}</td>
+
+        <td class="td-price">{{ pro.price }}</td>
+
+        <td class="td-note">{{ pro.descriptions }}</td>
+        <td class="td-handle">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 5px;
+              justify-content: center;
+            "
+          >
+            <button
+              type="button"
+              class="btn btn-primary"
+              (click)="open(pro.idProduct)"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-pencil"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"
+                />
+              </svg>
+            </button>
+
+            <button
+              type="button"
+              class="btn btn-primary"
+              (click)="del(pro.idProduct)"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-trash"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"
+                />
+                <path
+                  fill-rule="evenodd"
+                  d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"
+                />
+              </svg>
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<app-pagination-component></app-pagination-component>
+
+<!-- add or edit -->
+<app-modal-component
+  *ngIf="isOpen"
+  [isOpen]="isOpen"
+  [title]="title"
+  [widthModal]="true"
+  (emitModal)="close($event)"
+>
+  <app-modal-create-product
+    *ngIf="id_product; else noId"
+    [id_product]="id_product"
+    (emitModal)="edmitModal($event)"
+  ></app-modal-create-product>
+  <ng-template #noId
+    ><app-modal-create-product
+      [id_product]="id_product"
+      (emitModal)="edmitModal($event)"
+    ></app-modal-create-product>
+  </ng-template>
+</app-modal-component>
+
+<app-modal-component
+  *ngIf="isOpenConfrim"
+  [isOpen]="isOpenConfrim"
+  [title]="title"
+  (emitModal)="close($event)"
+  [widthModal]="false"
+>
+  <app-confirm-content
+    (confirm)="confirmDel($event)"
+    [title]="'Bạn có chắc chắn muốn xóa ?'"
+  >
+  </app-confirm-content>
+</app-modal-component>

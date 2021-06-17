@@ -8,8 +8,9 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class ModalComponentComponent implements OnInit {
   @Input() title: string;
   @Input() isOpen = false;
+  @Input() widthModal: boolean = true;
 
-  @Output() editModal = new EventEmitter();
+  @Output() emitModal = new EventEmitter();
 
   constructor() {}
 
@@ -17,10 +18,10 @@ export class ModalComponentComponent implements OnInit {
 
   close(data = null) {
     if (data) {
-      this.editModal.emit(data);
+      this.emitModal.emit(data);
 
       return;
     }
-    this.editModal.emit();
+    this.emitModal.emit();
   }
 }

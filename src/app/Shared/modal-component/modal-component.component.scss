@@ -8,7 +8,6 @@
   right: 0;
 }
 .modal-container {
-  max-width: 700px;
   animation-timing-function: ease;
   animation-duration: 300ms;
   position: fixed;
@@ -31,4 +30,11 @@
     height: auto;
     padding: 0 12px;
   }
+}
+
+.normal {
+  max-width: 700px;
+}
+.confirm {
+  max-width: 500px;
 }

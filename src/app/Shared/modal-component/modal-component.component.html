@@ -1,6 +1,10 @@
 <div *ngIf="isOpen" class="modal-bg-overlay" (click)="close(null)"></div>
 
-<div *ngIf="isOpen" class="modal-container">
+<div
+  *ngIf="isOpen"
+  class="modal-container"
+  [ngClass]="widthModal == true ? 'normal' : 'confirm'"
+>
   <div
     style="
       display: flex;
@@ -10,7 +14,7 @@
     "
   >
     <div>
-      <span class="text-20px">{{ title }}</span>
+      <span class="text-16px">{{ title }}</span>
     </div>
     <div>
       <img

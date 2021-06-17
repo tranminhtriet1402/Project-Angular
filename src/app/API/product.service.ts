@@ -14,21 +14,26 @@ export class ProductService {
 
   //has check
   getAllProuct() {
-    return this.http.get(environment.backend + '/Categories/');
+    return this.http.get(environment.backend + '/Products/');
   }
   //has check
   getProuctID(id: number) {
-    return this.http.get(environment.backend + '/Categories/' + id);
+    return this.http.get(environment.backend + '/Products/' + id);
   }
   //has check
   addProuct(product: Product) {
-    return this.http.post(environment.backend + '/Categories/', product);
+    return this.http.post(environment.backend + '/Products/', product);
   }
   deleteProuctID(id: number) {
-    return this.http.delete(environment.backend + '/Categories/' + id);
+    return this.http.delete(environment.backend + '/Products/' + id);
   }
   updateProuctID(id: number, product: Product) {
-    return this.http.put(environment.backend + '/Categories/' + id, product);
+    return this.http.put(environment.backend + '/Products/' + id, product);
   }
-  updateImageProduct(id: number, product: Product) {}
+  updateImageProduct(id: number, formData: FormData) {
+    return this.http.put(
+      environment.backend + `/Products/${id}/Upload`,
+      formData
+    );
+  }
 }

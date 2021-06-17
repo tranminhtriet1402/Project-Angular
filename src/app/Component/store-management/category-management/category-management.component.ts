@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { CategoryService } from 'src/app/API/category.service';
 import { Category } from 'src/app/Models/category';
 
@@ -14,12 +15,21 @@ export class CategoryManagementComponent implements OnInit {
   id_category: number;
   title: string;
 
-  constructor(private categoryService: CategoryService) {}
+  isOpenConfrim: boolean;
+  titleConfirm: string;
+
+  constructor(
+    private categoryService: CategoryService,
+    private toastr: ToastrService
+  ) {}
 
   ngOnInit(): void {
+    this.isOpenConfrim = false;
     this.isOpen = false;
     this.getAllCategory();
   }
+
+  //Add or create
   open(id) {
     this.isOpen = true;
     if (id) {
@@ -34,6 +44,7 @@ export class CategoryManagementComponent implements OnInit {
   close(data: any) {
     if (!data) {
       this.isOpen = false;
+      this.isOpenConfrim = false;
       this.id_category = 0;
     }
   }
@@ -45,6 +56,31 @@ export class CategoryManagementComponent implements OnInit {
       }
     } else {
       this.isOpen = false;
+    }
+  }
+  //Del
+  del(id) {
+    this.id_category = id;
+    this.title = 'Xóa phân loại';
+    this.isOpenConfrim = true;
+  }
+  confirmDel(res) {
+    if (res == true) {
+      this.categoryService
+        .deleteCategoryID(this.id_category)
+        .subscribe((res: any) => {
+          if (res.success == true) {
+            this.id_category = 0;
+            this.toastr.success(res.message);
+            this.isOpenConfrim = false;
+            this.getAllCategory();
+          } else {
+            this.toastr.error(res.message);
+            this.isOpenConfrim = false;
+          }
+        });
+    } else {
+      this.isOpenConfrim = false;
     }
   }
 

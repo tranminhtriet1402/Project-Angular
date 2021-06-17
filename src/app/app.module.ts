@@ -19,6 +19,8 @@ import { PaginationComponentComponent } from './Shared/pagination-component/pagi
 import { ModalCreateCategoryComponent } from './Component/store-management/category-management/modal-create-category/modal-create-category.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
+import { ConfirmContentComponent } from './Shared/confirm-content/confirm-content.component';
+import { ModalCreateProductComponent } from './Component/store-management/product-management/modal-create-product/modal-create-product.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,8 @@ import { ToastrModule } from 'ngx-toastr';
     ModalComponentComponent,
     PaginationComponentComponent,
     ModalCreateCategoryComponent,
+    ConfirmContentComponent,
+    ModalCreateProductComponent,
   ],
   imports: [
     BrowserModule,

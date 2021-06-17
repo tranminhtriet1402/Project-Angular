@@ -1,0 +1,101 @@
+table {
+  table-layout: fixed;
+  border-collapse: separate;
+  width: 100%;
+
+  thead {
+    tr {
+      height: 40px;
+      background-color: #ff96ad;
+      th {
+        color: #fff5fd;
+        padding: 10px 12px;
+      }
+    }
+  }
+  tbody {
+    tr {
+      height: 40px;
+
+      td {
+        padding: 5px 12px;
+      }
+    }
+  }
+}
+
+.btn-primary::ng-deep {
+  border-radius: 50%;
+  background-color: #ff96ad;
+  border-color: #ff96ad;
+  box-shadow: none;
+}
+
+.col-stt {
+  width: 40px;
+  text-align: center;
+  border-top: 1px solid #005a8d;
+  border-bottom: 1px solid #005a8d;
+  border-left: 1px solid #005a8d;
+}
+.col-name {
+  width: 20%;
+  border-top: 1px solid #005a8d;
+  border-left: 1px solid #005a8d;
+  border-bottom: 1px solid #005a8d;
+}
+.col-code {
+  width: 20%;
+  border-top: 1px solid #005a8d;
+  border-left: 1px solid #005a8d;
+  border-bottom: 1px solid #005a8d;
+}
+
+.col-price {
+  width: 12%;
+  border-top: 1px solid #005a8d;
+  border-left: 1px solid #005a8d;
+  border-bottom: 1px solid #005a8d;
+}
+
+.col-note {
+  width: 35%;
+  border-top: 1px solid #005a8d;
+  border-left: 1px solid #005a8d;
+  border-bottom: 1px solid #005a8d;
+}
+.col-handle {
+  width: 100px;
+  border-top: 1px solid #005a8d;
+  border-left: 1px solid #005a8d;
+  border-right: 1px solid #005a8d;
+  border-bottom: 1px solid #005a8d;
+}
+
+.td-stt {
+  border-bottom: 1px solid #005a8d;
+  border-left: 1px solid #005a8d;
+  text-align: center;
+}
+
+.td-name,
+.td-code,
+.td-note,
+.td-price,
+.td-stock,
+.td-status {
+  border-bottom: 1px solid #005a8d;
+  border-left: 1px solid #005a8d;
+  text-align: left;
+}
+.td-handle {
+  border-bottom: 1px solid #005a8d;
+  border-left: 1px solid #005a8d;
+  border-right: 1px solid #005a8d;
+}
+
+.btn-add {
+  color: white;
+  min-width: 68px;
+  background-color: #ff96ad;
+}

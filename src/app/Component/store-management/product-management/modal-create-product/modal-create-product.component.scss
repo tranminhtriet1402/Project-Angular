@@ -1,0 +1,33 @@
+.input-form {
+  display: flex;
+  flex-direction: column;
+}
+
+::placeholder {
+  opacity: 0.3;
+}
+
+$red: #fa1e0e;
+
+.error {
+  color: $red;
+}
+
+.btn-option {
+  color: white;
+  min-width: 68px;
+  background-color: #ff96ad;
+  &:disabled {
+    background-color: gray;
+    opacity: 0.2;
+  }
+}
+
+.btn-cancel {
+  min-width: 68px;
+  border: 1px solid #ff96ad;
+  &:hover {
+    color: white;
+    background-color: #ff96ad;
+  }
+}

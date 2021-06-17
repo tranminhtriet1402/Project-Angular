@@ -19,6 +19,8 @@ import { Category } from 'src/app/Models/category';
 export class ModalCreateCategoryComponent implements OnInit {
   @Input() id_category: number;
 
+  @Input() title: string;
+
   @Output() emitModal = new EventEmitter();
 
   category: Category = {};

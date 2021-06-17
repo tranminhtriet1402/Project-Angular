@@ -1,5 +1,5 @@
 <div class="row">
-  <div><span class="text-24px">Quản lý loại giày</span></div>
+  <div><span class="text-24px">Quản lý loại sản phẩm</span></div>
   <div><button class="btn btn-add" (click)="open(null)">Thêm mới</button></div>
 </div>
 <div style="overflow-x: auto; margin-top: 10px">
@@ -47,7 +47,11 @@
               </svg>
             </button>
 
-            <button type="button" class="btn btn-primary">
+            <button
+              type="button"
+              class="btn btn-primary"
+              (click)="del(cate.idCategory)"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -74,11 +78,13 @@
 
 <app-pagination-component></app-pagination-component>
 
+<!-- add or edit -->
 <app-modal-component
   *ngIf="isOpen"
   [isOpen]="isOpen"
   [title]="title"
-  (editModal)="close($event)"
+  [widthModal]="true"
+  (emitModal)="close($event)"
 >
   <app-modal-create-category
     *ngIf="id_category; else noId"
@@ -91,4 +97,21 @@
       (emitModal)="edmitModal($event)"
     ></app-modal-create-category>
   </ng-template>
+</app-modal-component>
+
+<!-- 
+confirm del -->
+
+<app-modal-component
+  *ngIf="isOpenConfrim"
+  [isOpen]="isOpenConfrim"
+  [title]="title"
+  (emitModal)="close($event)"
+  [widthModal]="false"
+>
+  <app-confirm-content
+    (confirm)="confirmDel($event)"
+    [title]="'Bạn có chắc chắn muốn xóa ?'"
+  >
+  </app-confirm-content>
 </app-modal-component>
