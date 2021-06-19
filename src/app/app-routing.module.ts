@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { DetailProductComponent } from './Component/product-component/detail-product/detail-product.component';
 import { ProductComponentComponent } from './Component/product-component/product-component.component';
 import { ProductShoeManComponent } from './Component/product-component/product-shoe-man/product-shoe-man.component';
 import { ProductShoeWomenComponent } from './Component/product-component/product-shoe-women/product-shoe-women.component';
@@ -35,6 +36,10 @@ const routes: Routes = [
       {
         path: 'shoe-sport',
         component: ProductShowSportComponent,
+      },
+      {
+        path: 'detail/:id',
+        component: DetailProductComponent,
       },
       {
         path: 'store-management',

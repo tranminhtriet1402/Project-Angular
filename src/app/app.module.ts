@@ -21,6 +21,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { ConfirmContentComponent } from './Shared/confirm-content/confirm-content.component';
 import { ModalCreateProductComponent } from './Component/store-management/product-management/modal-create-product/modal-create-product.component';
+import { DetailProductComponent } from './Component/product-component/detail-product/detail-product.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { ModalCreateProductComponent } from './Component/store-management/produc
     ModalCreateCategoryComponent,
     ConfirmContentComponent,
     ModalCreateProductComponent,
+    DetailProductComponent,
   ],
   imports: [
     BrowserModule,
