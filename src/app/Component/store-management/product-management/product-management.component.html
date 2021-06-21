@@ -99,7 +99,7 @@
     </tbody>
   </table>
 </div>
-<div class="row">
+<div class="row" style="padding: 8px">
   <div
     style="display: flex; align-items: center; justify-content: space-between"
   >
@@ -113,6 +113,9 @@
     </div>
 
     <pagination-controls
+      [previousLabel]="''"
+      [nextLabel]="''"
+      class="my-pagination"
       (pageChange)="pageChanged($event)"
     ></pagination-controls>
   </div>

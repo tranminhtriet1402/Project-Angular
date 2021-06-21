@@ -17,6 +17,10 @@ $red: #fa1e0e;
   color: white;
   min-width: 68px;
   background-color: #ff96ad;
+  &:disabled {
+    background-color: gray;
+    opacity: 0.2;
+  }
 }
 
 .btn-cancel {

@@ -1,14 +1,15 @@
 <form [formGroup]="formcreate">
   <div class="row" style="margin-top: 10px">
-    <div class="col-12 col-md-6">
+    <div class="col-12 col-md-6" style="margin-bottom: 8px">
       <div class="input-form">
-        <!-- [ngClass]="
-              (formcreate.get('codeSKU').touched &&
-                formcreate.controls.codeSKU.errors?.required) ||
-              formcreate.controls.codeSKU.errors?.maxlength
-                ? 'error-class'
-                : '' -->
-        <span class="text-14px"
+        <span
+          class="text-14px"
+          [ngClass]="
+            formcreate.controls.name.touched &&
+            formcreate.controls.name.errors?.required
+              ? 'error'
+              : ''
+          "
           >Tên phân loại <span class="error">*</span></span
         >
         <input
@@ -17,19 +18,54 @@
           class="form-control"
           formControlName="name"
         />
-        <!-- <span> erorr</span> -->
+        <span
+          *ngIf="
+            formcreate.controls.name.touched &&
+            formcreate.controls.name.errors?.required
+          "
+          class="text-12px"
+          [ngClass]="
+            formcreate.controls.name.touched &&
+            formcreate.controls.name.errors?.required
+              ? 'error'
+              : ''
+          "
+          >Vui lòng nhập tên phân loại
+        </span>
       </div>
     </div>
-    <div class="col -12 col-md-6">
+    <div class="col -12 col-md-6" style="margin-bottom: 8px">
       <div class="input-form">
-        <span class="text-14px">Mã phân loại <span class="error">*</span></span>
+        <span
+          class="text-14px"
+          [ngClass]="
+            formcreate.controls.code.touched &&
+            formcreate.controls.code.errors?.required
+              ? 'error'
+              : ''
+          "
+          >Mã phân loại <span class="error">*</span></span
+        >
         <input
           type="text"
           placeholder="Nhập mã phân loại"
           class="form-control"
           formControlName="code"
         />
-        <!-- <span> erorr</span> -->
+        <span
+          *ngIf="
+            formcreate.controls.code.touched &&
+            formcreate.controls.code.errors?.required
+          "
+          class="text-12px"
+          [ngClass]="
+            formcreate.controls.code.touched &&
+            formcreate.controls.code.errors?.required
+              ? 'error'
+              : ''
+          "
+          >Vui lòng nhập mã phân loại
+        </span>
       </div>
     </div>
     <div class="col-12">
@@ -56,7 +92,12 @@
         flex-direction: row-reverse;
       "
     >
-      <button type="button" class="btn btn-option" (click)="optionCategory()">
+      <button
+        type="button"
+        class="btn btn-option"
+        [disabled]="!formcreate.valid"
+        (click)="optionCategory()"
+      >
         {{ optionButton }}
       </button>
       <button type="button" class="btn btn-cancel" (click)="edmitModal(null)">

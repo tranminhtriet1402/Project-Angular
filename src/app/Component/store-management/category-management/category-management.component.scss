@@ -88,3 +88,16 @@ table {
   min-width: 68px;
   background-color: #ff96ad;
 }
+
+.my-pagination::ng-deep .ngx-pagination .current {
+  background: #ff96ad !important;
+  border-radius: 100%;
+}
+.my-pagination::ng-deep .ngx-pagination {
+  padding: 0px !important;
+  margin: 0px !important;
+}
+.my-pagination::ng-deep .ngx-pagination a,
+.ngx-pagination button {
+  border-radius: 100%;
+}

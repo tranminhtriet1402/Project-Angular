@@ -99,6 +99,9 @@
     </div>
 
     <pagination-controls
+      [previousLabel]="''"
+      [nextLabel]="''"
+      class="my-pagination"
       (pageChange)="pageChanged($event)"
     ></pagination-controls>
   </div>

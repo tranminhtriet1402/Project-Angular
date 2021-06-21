@@ -64,7 +64,14 @@
     <div class="col-8">
       <div class="col-12" style="margin-bottom: 8px">
         <div class="input-form">
-          <span class="text-14px"
+          <span
+            class="text-14px"
+            [ngClass]="
+              formcreate.controls.name.touched &&
+              formcreate.controls.name.errors?.required
+                ? 'error'
+                : ''
+            "
             >Tên sản phẩm<span class="error">*</span></span
           >
           <input
@@ -73,12 +80,33 @@
             class="form-control"
             formControlName="name"
           />
-          <!-- <span> erorr</span> -->
+          <span
+            *ngIf="
+              formcreate.controls.name.touched &&
+              formcreate.controls.name.errors?.required
+            "
+            class="text-14px"
+            [ngClass]="
+              formcreate.controls.name.touched &&
+              formcreate.controls.name.errors?.required
+                ? 'error'
+                : ''
+            "
+            >Vui lòng nhập tên sản phẩm</span
+          >
         </div>
       </div>
       <div class="col -12" style="margin-bottom: 8px">
         <div class="input-form">
-          <span class="text-14px"
+          <span
+            class="text-14px"
+            class="text-14px"
+            [ngClass]="
+              formcreate.controls.code.touched &&
+              formcreate.controls.code.errors?.required
+                ? 'error'
+                : ''
+            "
             >Mã sản phẩm <span class="error">*</span></span
           >
           <input
@@ -87,7 +115,20 @@
             class="form-control"
             formControlName="code"
           />
-          <!-- <span> erorr</span> -->
+          <span
+            *ngIf="
+              formcreate.controls.code.touched &&
+              formcreate.controls.code.errors?.required
+            "
+            class="text-14px"
+            [ngClass]="
+              formcreate.controls.code.touched &&
+              formcreate.controls.code.errors?.required
+                ? 'error'
+                : ''
+            "
+            >Vui lòng nhập mã sản phẩm</span
+          >
         </div>
       </div>
       <div class="col -12" style="margin-bottom: 8px">
