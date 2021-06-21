@@ -99,3 +99,8 @@ table {
   min-width: 68px;
   background-color: #ff96ad;
 }
+
+.ngx-pagination .current {
+  background: #ff96ad !important;
+  color: #fff5fd !important;
+}

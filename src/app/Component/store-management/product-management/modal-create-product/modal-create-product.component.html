@@ -3,11 +3,11 @@
     <div class="col-4">
       <div class="col-12">
         <div class="input-form">
-          <span class="text-14px" (click)="up()">Hình ảnh</span>
+          <span class="text-14px">Hình ảnh</span>
           <div
             style="
               width: full;
-              height: 200px;
+              height: 192px;
               border: 1px solid #dddddd;
               border-radius: 4px;
               display: flex;
@@ -50,6 +50,15 @@
             (change)="fileChangeEvent($event)"
           />
         </div>
+        <button
+          style="margin-top: 8px; width: 100%"
+          *ngIf="id_product"
+          (click)="upImage()"
+          type="button"
+          class="btn btn-option"
+        >
+          Upload hình ảnh
+        </button>
       </div>
     </div>
     <div class="col-8">
@@ -107,7 +116,7 @@
       </div>
     </div>
 
-    <div class="col-12">
+    <div class="col-12" style="margin-top: 10px">
       <div class="input-form">
         <span class="text-14px">Mô tả</span>
         <textarea

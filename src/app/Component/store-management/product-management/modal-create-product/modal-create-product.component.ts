@@ -5,6 +5,7 @@ import { CategoryService } from 'src/app/API/category.service';
 import { ProductService } from 'src/app/API/product.service';
 import { Category } from 'src/app/Models/category';
 import { Product } from 'src/app/Models/product';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-modal-create-product',
@@ -53,6 +54,7 @@ export class ModalCreateProductComponent implements OnInit {
     }
   }
 
+  //Get api
   getIDProduct() {
     this.productService.getProuctID(this.id_product).subscribe((res: any) => {
       if (res.success == true) {
@@ -66,6 +68,9 @@ export class ModalCreateProductComponent implements OnInit {
           type_category: this.product.idCategory ? this.product.idCategory : '',
           descriptions: this.product.descriptions,
         });
+        if (this.product.images) {
+          this.urlImage = 'https://localhost:44370/' + this.product.images;
+        }
       }
     });
   }
@@ -108,31 +113,32 @@ export class ModalCreateProductComponent implements OnInit {
     this.product.descriptions = this.formcreate.controls['descriptions'].value;
     this.product.price = this.formcreate.controls['price'].value;
 
-    // this.productService
-    //   .updateProuctID(this.product.idProduct, this.product)
-    //   .subscribe((res: any) => {
-    //     if (res.message == true) {
-
-    //     }
-    //     this.toastr.success(res.message);
-    //     this.edmitModal(res);
-    //   });
-    // if (this.urlUpdate) {
-    //   const formData: FormData = new FormData();
-    //   formData.append('file', this.urlUpdate, this.urlUpdate.name);
-    //   this.productService
-    //     .updateImageProduct(this.id_product, formData)
-    //     .subscribe((res1: any) => {
-    //       if (res1.success == true) {
-    //         this.toastr.success(res1.message);
-    //         this.edmitModal(res1);
-    //       } else {
-    //         this.toastr.error(res1.message);
-    //       }
-    //     });
-    // }
+    this.productService
+      .updateProuctID(this.product.idProduct, this.product)
+      .subscribe((res: any) => {
+        if (res.message == true) {
+        }
+        this.toastr.success(res.message);
+        this.edmitModal(res);
+      });
+  }
+  upImage() {
+    if (this.urlUpdate) {
+      const formData: FormData = new FormData();
+      formData.append('file', this.urlUpdate, this.urlUpdate.name);
+      this.productService
+        .updateImageProduct(this.id_product, formData)
+        .subscribe((res1: any) => {
+          if (res1.success == true) {
+            this.toastr.success(res1.message);
+          } else {
+            this.toastr.error(res1.message);
+          }
+        });
+    }
   }
 
+  //Emit data
   edmitModal(data = null) {
     if (data) {
       this.emitModal.emit(data);
@@ -164,7 +170,6 @@ export class ModalCreateProductComponent implements OnInit {
     }
   }
 
-  up() {}
   //Get option category
   getAllCate() {
     this.categoryService.getAllCategory().subscribe((res: any) => {

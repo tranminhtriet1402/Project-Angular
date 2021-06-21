@@ -18,6 +18,16 @@ export class CategoryManagementComponent implements OnInit {
   isOpenConfrim: boolean;
   titleConfirm: string;
 
+  //Pagin
+  pageSize: number = 10;
+  currentPage: number = 1;
+  indexArray: number = 0;
+  pageSizes: PageOption[] = [
+    { value: 5, viewValue: '10' },
+    { value: 10, viewValue: '15' },
+    { value: 15, viewValue: '20' },
+  ];
+
   constructor(
     private categoryService: CategoryService,
     private toastr: ToastrService
@@ -92,4 +102,22 @@ export class CategoryManagementComponent implements OnInit {
       }
     });
   }
+  //Paging
+  pageChanged(data) {
+    this.currentPage = data;
+    this.indexArray = 0;
+    if (this.currentPage == 1) {
+      this.indexArray = 0;
+    } else {
+      this.indexArray = (this.currentPage - 1) * this.pageSize;
+    }
+  }
+  changePageSize($event) {
+    console.log($event);
+  }
+}
+
+interface PageOption {
+  value: number;
+  viewValue: string;
 }

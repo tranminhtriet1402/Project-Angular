@@ -2,6 +2,12 @@
   <div class="row" style="margin-top: 10px">
     <div class="col-12 col-md-6">
       <div class="input-form">
+        <!-- [ngClass]="
+              (formcreate.get('codeSKU').touched &&
+                formcreate.controls.codeSKU.errors?.required) ||
+              formcreate.controls.codeSKU.errors?.maxlength
+                ? 'error-class'
+                : '' -->
         <span class="text-14px"
           >Tên phân loại <span class="error">*</span></span
         >

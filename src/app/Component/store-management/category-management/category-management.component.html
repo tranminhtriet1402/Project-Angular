@@ -14,8 +14,18 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let cate of category; let i = index">
-        <td class="td-stt">{{ i + 1 }}</td>
+      <tr
+        *ngFor="
+          let cate of category
+            | paginate
+              : {
+                  itemsPerPage: pageSize,
+                  currentPage: currentPage
+                };
+          let i = index
+        "
+      >
+        <td class="td-stt">{{ indexArray + i + 1 }}</td>
         <td class="td-name">{{ cate.nameCategory }}</td>
         <td class="td-code">{{ cate.codeCategory }}</td>
         <td class="td-note">{{ cate.descriptions }}</td>
@@ -75,8 +85,24 @@
     </tbody>
   </table>
 </div>
+<div class="row">
+  <div
+    style="display: flex; align-items: center; justify-content: space-between"
+  >
+    <div style="display: flex; align-items: center; gap: 4px">
+      <span style="white-space: nowrap"> Số dòng hiển thị trên 1 trang</span>
+      <select [(ngModel)]="pageSize" (change)="changePageSize($event)">
+        <option *ngFor="let pageSize of pageSizes" [ngValue]="pageSize.value">
+          {{ pageSize.value }}
+        </option>
+      </select>
+    </div>
 
-<app-pagination-component></app-pagination-component>
+    <pagination-controls
+      (pageChange)="pageChanged($event)"
+    ></pagination-controls>
+  </div>
+</div>
 
 <!-- add or edit -->
 <app-modal-component

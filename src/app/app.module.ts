@@ -15,13 +15,13 @@ import { CategoryManagementComponent } from './Component/store-management/catego
 import { ProductManagementComponent } from './Component/store-management/product-management/product-management.component';
 import { ModalComponentComponent } from './Shared/modal-component/modal-component.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { PaginationComponentComponent } from './Shared/pagination-component/pagination-component.component';
 import { ModalCreateCategoryComponent } from './Component/store-management/category-management/modal-create-category/modal-create-category.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { ConfirmContentComponent } from './Shared/confirm-content/confirm-content.component';
 import { ModalCreateProductComponent } from './Component/store-management/product-management/modal-create-product/modal-create-product.component';
 import { DetailProductComponent } from './Component/product-component/detail-product/detail-product.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -35,7 +35,6 @@ import { DetailProductComponent } from './Component/product-component/detail-pro
     CategoryManagementComponent,
     ProductManagementComponent,
     ModalComponentComponent,
-    PaginationComponentComponent,
     ModalCreateCategoryComponent,
     ConfirmContentComponent,
     ModalCreateProductComponent,
@@ -50,6 +49,7 @@ import { DetailProductComponent } from './Component/product-component/detail-pro
     FormsModule,
     ReactiveFormsModule,
     ToastrModule.forRoot({ positionClass: 'toast-bottom-left', timeOut: 3000 }),
+    NgxPaginationModule,
   ],
   providers: [CategoryService],
   bootstrap: [AppComponent],
