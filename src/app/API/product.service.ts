@@ -36,4 +36,22 @@ export class ProductService {
       formData
     );
   }
+  updateImageProduct1(id: number, formData: FormData) {
+    return this.http.put(
+      environment.backend + `/Products/${id}/Upload1`,
+      formData
+    );
+  }
+  updateImageProduct2(id: number, formData: FormData) {
+    return this.http.put(
+      environment.backend + `/Products/${id}/Upload2`,
+      formData
+    );
+  }
+  updateImageProduct3(id: number, formData: FormData) {
+    return this.http.put(
+      environment.backend + `/Products/${id}/Upload3`,
+      formData
+    );
+  }
 }

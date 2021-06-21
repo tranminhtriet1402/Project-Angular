@@ -60,6 +60,148 @@
           Upload hình ảnh
         </button>
       </div>
+      <div
+        class="col-12"
+        style="
+          margin-top: 8px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        "
+      >
+        <!-- image1 -->
+        <div
+          style="
+            width: 50px;
+            height: 50px;
+            border: 1px solid #dddddd;
+            border-radius: 4px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          "
+          (click)="imagePath1.click()"
+        >
+          <img
+            [src]="urlImage1"
+            style="height: 100%; width: 100%"
+            *ngIf="urlImage1; else defaultImg1"
+          />
+          <ng-template #defaultImg1>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon icon-tabler icon-tabler-photo"
+              style="width: 25px; height: 25px"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="#9e9e9e"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <line x1="15" y1="8" x2="15.01" y2="8" />
+              <rect x="4" y="4" width="16" height="16" rx="3" />
+              <path d="M4 15l4 -4a3 5 0 0 1 3 0l5 5" />
+              <path d="M14 14l1 -1a3 5 0 0 1 3 0l2 2" />
+            </svg>
+          </ng-template>
+          <input
+            type="file"
+            style="display: none"
+            #imagePath1
+            (change)="fileChangeEvent1($event)"
+          />
+        </div>
+        <!-- image2 -->
+        <div
+          style="
+            width: 50px;
+            height: 50px;
+            border: 1px solid #dddddd;
+            border-radius: 4px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          "
+          (click)="imagePath2.click()"
+        >
+          <img
+            [src]="urlImage2"
+            style="height: 100%; width: 100%"
+            *ngIf="urlImage2; else defaultImg2"
+          />
+          <ng-template #defaultImg2>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon icon-tabler icon-tabler-photo"
+              style="width: 25px; height: 25px"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="#9e9e9e"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <line x1="15" y1="8" x2="15.01" y2="8" />
+              <rect x="4" y="4" width="16" height="16" rx="3" />
+              <path d="M4 15l4 -4a3 5 0 0 1 3 0l5 5" />
+              <path d="M14 14l1 -1a3 5 0 0 1 3 0l2 2" />
+            </svg>
+          </ng-template>
+          <input
+            type="file"
+            style="display: none"
+            #imagePath2
+            (change)="fileChangeEvent2($event)"
+          />
+        </div>
+        <!-- image3 -->
+        <div
+          style="
+            width: 50px;
+            height: 50px;
+            border: 1px solid #dddddd;
+            border-radius: 4px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          "
+          (click)="imagePath3.click()"
+        >
+          <img
+            [src]="urlImage3"
+            style="height: 100%; width: 100%"
+            *ngIf="urlImage3; else defaultImg3"
+          />
+          <ng-template #defaultImg3>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon icon-tabler icon-tabler-photo"
+              style="width: 25px; height: 25px"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="#9e9e9e"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <line x1="15" y1="8" x2="15.01" y2="8" />
+              <rect x="4" y="4" width="16" height="16" rx="3" />
+              <path d="M4 15l4 -4a3 5 0 0 1 3 0l5 5" />
+              <path d="M14 14l1 -1a3 5 0 0 1 3 0l2 2" />
+            </svg>
+          </ng-template>
+          <input
+            type="file"
+            style="display: none"
+            #imagePath3
+            (change)="fileChangeEvent3($event)"
+          />
+        </div>
+      </div>
     </div>
     <div class="col-8">
       <div class="col-12" style="margin-bottom: 8px">

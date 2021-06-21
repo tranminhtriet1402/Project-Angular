@@ -1,6 +1,20 @@
 <div class="row">
   <div><span class="text-24px">Quản lý loại sản phẩm</span></div>
-  <div><button class="btn btn-add" (click)="open(null)">Thêm mới</button></div>
+  <div style="display: flex; align-items: center; gap: 4px">
+    <button class="btn btn-add" (click)="open(null)">Thêm mới</button>
+    <div style="position: relative">
+      <input
+        class="form-control"
+        type="text"
+        placeholder="Nhập từ khóa tìm kiếm"
+      />
+
+      <img
+        src="/assets/icon/Icons_search.svg"
+        style="position: absolute; top: 11px; left: 12px"
+      />
+    </div>
+  </div>
 </div>
 <div style="overflow-x: auto; margin-top: 10px">
   <table [cellSpacing]="0" [cellPadding]="0">
