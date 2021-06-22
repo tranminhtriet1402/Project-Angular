@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { ProductService } from 'src/app/API/product.service';
 import { Product } from 'src/app/Models/product';
-
+import { debounceTime } from 'rxjs/operators';
 @Component({
   selector: 'app-product-management',
   templateUrl: './product-management.component.html',

@@ -26,11 +26,11 @@ const routes: Routes = [
         component: ProductComponentComponent,
       },
       {
-        path: 'shoe-man',
+        path: 'Running',
         component: ProductShoeManComponent,
       },
       {
-        path: 'shoe-woman',
+        path: 'Jordan',
         component: ProductShoeWomenComponent,
       },
       {

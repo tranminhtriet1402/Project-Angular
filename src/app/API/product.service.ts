@@ -11,10 +11,12 @@ import { Product } from '../Models/product';
 })
 export class ProductService {
   constructor(private http: HttpClient) {}
-
   //has check
   getAllProuct() {
     return this.http.get(environment.backend + '/Products/');
+  }
+  getAllProuctOnCate(id: number) {
+    return this.http.get(environment.backend + '/getProductOnCate/' + id);
   }
   //has check
   getProuctID(id: number) {

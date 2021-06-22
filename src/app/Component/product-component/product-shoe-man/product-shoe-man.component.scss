@@ -55,3 +55,40 @@ input.form-control:hover::ng-deep {
     border: 2px solid #f5abc9 !important;
   }
 }
+.card-item {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+.card-info {
+  display: flex;
+  flex-direction: column;
+}
+.card-info-hover {
+  display: none;
+}
+
+.hover {
+  &:hover {
+    .card-info {
+      display: none;
+    }
+    .card-info-hover {
+      display: flex;
+
+      flex-direction: column;
+    }
+  }
+}
+.my-pagination::ng-deep .ngx-pagination .current {
+  background: #ff96ad !important;
+  border-radius: 100%;
+}
+.my-pagination::ng-deep .ngx-pagination {
+  padding: 0px !important;
+  margin: 0px !important;
+}
+.my-pagination::ng-deep .ngx-pagination a,
+.ngx-pagination button {
+  border-radius: 100%;
+}

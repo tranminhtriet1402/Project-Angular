@@ -1,1 +1,203 @@
-<p>product-shoe-women works!</p>
+<div class="container" style="min-height: 500px">
+  <div class="row">
+    <div class="col-md-3" style="margin-top: 15px">
+      <div
+        class="row"
+        style="
+          width: 100%;
+          position: -webkit-sticky;
+          position: sticky;
+          top: 0;
+          padding: 10px;
+          gap: 20px;
+        "
+      >
+        <div class="col-12 text-24px" style="color: #232323">Man Shoe (40)</div>
+        <div class="col-12"><span class="title">Lifestyle</span></div>
+        <div class="col-12"><span class="title">Jordan</span></div>
+        <div class="col-12"><span class="title">Running</span></div>
+        <div class="col-12"><span class="title">Basketball</span></div>
+        <div class="col-12">
+          <span class="title">American Football</span>
+        </div>
+        <hr />
+        <div class="col-12">
+          <span class="text-20px">Select Size</span>
+          <div style="display: flex; flex-wrap: wrap; gap: 15px">
+            <button
+              type="button"
+              class="btn btn-light"
+              style="min-height: 25px; min-width: 40px"
+            >
+              35
+            </button>
+            <button
+              type="button"
+              class="btn btn-light"
+              style="min-height: 25px; min-width: 40px"
+            >
+              36
+            </button>
+            <button
+              type="button"
+              class="btn btn-light"
+              style="min-height: 25px; min-width: 40px"
+            >
+              37
+            </button>
+            <button
+              type="button"
+              class="btn btn-light"
+              style="min-height: 25px; min-width: 40px"
+            >
+              38
+            </button>
+            <button
+              type="button"
+              class="btn btn-light"
+              style="min-height: 25px; min-width: 40px"
+            >
+              39
+            </button>
+            <button
+              type="button"
+              class="btn btn-light"
+              style="min-height: 25px; min-width: 40px"
+            >
+              40
+            </button>
+            <button
+              type="button"
+              class="btn btn-light"
+              style="min-height: 25px; min-width: 40px"
+            >
+              41
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row"></div>
+    </div>
+
+    <!-- data -->
+    <div class="col-md-9 row">
+      <div
+        class="col-lg-12"
+        style="
+          padding: 10px;
+          height: 50px;
+          background-color: white;
+          gap: 20px;
+          z-index: 10;
+          margin-top: 15px;
+          max-height: 500px;
+          position: -webkit-sticky;
+          position: sticky;
+          top: 0;
+          display: flex;
+          flex-direction: row-reverse;
+          align-items: center;
+        "
+      >
+        <div style="position: relative">
+          <input
+            class="form-control"
+            type="text"
+            placeholder="Nhập từ khóa tìm kiếm"
+          />
+          <img
+            src="/assets/icon/Icons_search.svg"
+            style="position: absolute; top: 11px; left: 12px"
+          />
+        </div>
+
+        <div>
+          <!-- <button
+              type="button"
+              style="
+                display: flex;
+                gap: 4px;
+                padding: 0 7px;
+                align-items: center;
+                border: 1px solid #f6dfeb;
+              "
+              class="hover-button"
+            >
+              <span>Sắp xếp</span>
+            </button> -->
+        </div>
+      </div>
+      <div
+        class="col-md-4 hover"
+        *ngFor="
+          let pro of products
+            | paginate
+              : {
+                  itemsPerPage: pageSize,
+                  currentPage: currentPage
+                }
+        "
+        style="margin-top: 15px; padding-right: 0; height: 500px"
+      >
+        <div class="card-item">
+          <img [src]="urlImage + pro.images" alt="Avatar" class="image" />
+
+          <div class="card-info" style="margin-top: 10px">
+            <span style="color: #f5abc9; cursor: pointer"
+              ><strong>Xem chi tiết</strong></span
+            >
+            <span class="text-18px">{{ pro.nameProduct }}</span>
+            <span class="text-16px">Giày Nike</span>
+
+            <span class="text-16px" style="color: #a7bbc7"
+              >{{ pro.price | number }} VNĐ</span
+            >
+          </div>
+          <div class="card-info-hover" style="margin-top: 8px">
+            <div style="display: flex; gap: 6px">
+              <div>
+                <img
+                  *ngIf="pro.images1"
+                  [src]="urlImage + pro.images1"
+                  style="border-radius: 100%; width: 35px; height: 35px"
+                />
+              </div>
+              <div>
+                <img
+                  *ngIf="pro.images2"
+                  [src]="urlImage + pro.images2"
+                  style="border-radius: 100%; width: 35px; height: 35px"
+                />
+              </div>
+              <div>
+                <img
+                  *ngIf="pro.images3"
+                  [src]="urlImage + pro.images3"
+                  style="border-radius: 100%; width: 35px; height: 35px"
+                />
+              </div>
+            </div>
+            <div style="display: flex; flex-direction: column">
+              <span class="text-16px">{{ pro.nameProduct }}</span>
+              <span class="text-16px">{{ pro.price | number }} VNĐ </span>
+              <span
+                [routerLink]="'/detail/' + pro.idProduct"
+                style="color: #f5abc9; cursor: pointer"
+                ><strong>Xem chi tiết</strong></span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12" style="display: flex; justify-content: center">
+        <pagination-controls
+          [previousLabel]="'previous---- '"
+          [nextLabel]="'----next'"
+          class="my-pagination"
+          (pageChange)="pageChanged($event)"
+        ></pagination-controls>
+      </div>
+    </div>
+  </div>
+</div>

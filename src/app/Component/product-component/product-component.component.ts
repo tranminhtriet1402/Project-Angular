@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoryService } from 'src/app/API/category.service';
+import { ProductService } from 'src/app/API/product.service';
 import { Category } from 'src/app/Models/category';
+import { Product } from 'src/app/Models/product';
 
 @Component({
   selector: 'app-product-component',
@@ -8,7 +10,21 @@ import { Category } from 'src/app/Models/category';
   styleUrls: ['./product-component.component.scss'],
 })
 export class ProductComponentComponent implements OnInit {
-  constructor() {}
+  array: Product[] = [];
+  slice: Product[] = [];
+  urlImage: string = 'https://localhost:44370/';
 
-  ngOnInit(): void {}
+  constructor(private productService: ProductService) {}
+
+  ngOnInit(): void {
+    this.getProduct();
+  }
+  getProduct() {
+    this.productService.getAllProuct().subscribe((res: any) => {
+      if (res.success == true) {
+        this.slice = res.product;
+        this.array = this.slice.slice(0, 4);
+      }
+    });
+  }
 }

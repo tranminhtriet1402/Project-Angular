@@ -71,8 +71,6 @@ export class ModalCreateProductComponent implements OnInit {
   getIDProduct() {
     this.productService.getProuctID(this.id_product).subscribe((res: any) => {
       if (res.success == true) {
-        console.log(res);
-
         this.product = res.product[0];
         this.formcreate.patchValue({
           name: this.product.nameProduct,
@@ -159,7 +157,6 @@ export class ModalCreateProductComponent implements OnInit {
     } else {
       this.toastr.warning('Bạn chưa thêm hình ảnh đại diện cho sản phẩm');
     }
-    console.log(this.id_update);
   }
   updateProduct() {
     this.product.idProduct = this.id_product;
@@ -262,7 +259,6 @@ export class ModalCreateProductComponent implements OnInit {
 
   //Get image
   fileChangeEvent(event) {
-    console.log(event.target.files);
     this.urlUpdate = event.item;
 
     if (event.target.files) {
@@ -275,7 +271,6 @@ export class ModalCreateProductComponent implements OnInit {
     }
   }
   fileChangeEvent1(event) {
-    console.log(event.target.files);
     this.urlUpdate1 = event.item;
 
     if (event.target.files) {
@@ -288,7 +283,6 @@ export class ModalCreateProductComponent implements OnInit {
     }
   }
   fileChangeEvent2(event) {
-    console.log(event.target.files);
     this.urlUpdate2 = event.item;
 
     if (event.target.files) {
@@ -301,7 +295,6 @@ export class ModalCreateProductComponent implements OnInit {
     }
   }
   fileChangeEvent3(event) {
-    console.log(event.target.files);
     this.urlUpdate3 = event.item;
 
     if (event.target.files) {

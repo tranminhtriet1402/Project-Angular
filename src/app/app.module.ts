@@ -22,6 +22,8 @@ import { ConfirmContentComponent } from './Shared/confirm-content/confirm-conten
 import { ModalCreateProductComponent } from './Component/store-management/product-management/modal-create-product/modal-create-product.component';
 import { DetailProductComponent } from './Component/product-component/detail-product/detail-product.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { TooltipModule } from 'ng2-tooltip-directive';
+import { MyDefaultTooltipOptions } from './Directive/tooltip';
 
 @NgModule({
   declarations: [
@@ -50,6 +52,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     ReactiveFormsModule,
     ToastrModule.forRoot({ positionClass: 'toast-bottom-left', timeOut: 3000 }),
     NgxPaginationModule,
+    TooltipModule.forRoot(MyDefaultTooltipOptions),
   ],
   providers: [CategoryService],
   bootstrap: [AppComponent],

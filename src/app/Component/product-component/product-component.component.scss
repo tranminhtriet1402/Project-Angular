@@ -12,3 +12,29 @@
 .banner:hover {
   transform: scale(1.1);
 }
+
+.card-item {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+.card-info {
+  display: flex;
+  flex-direction: column;
+}
+.card-info-hover {
+  display: none;
+}
+
+.hover {
+  &:hover {
+    .card-info {
+      display: none;
+    }
+    .card-info-hover {
+      display: flex;
+
+      flex-direction: column;
+    }
+  }
+}

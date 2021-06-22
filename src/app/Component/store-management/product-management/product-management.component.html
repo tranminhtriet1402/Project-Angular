@@ -12,7 +12,7 @@
 
         <th class="col-price">Giá</th>
 
-        <th class="col-note">Ghi chú</th>
+        <th class="col-note">Mô tả</th>
         <th class="col-handle">Thao tác</th>
       </tr>
     </thead>
@@ -29,20 +29,34 @@
         "
       >
         <td class="td-stt">{{ indexArray + i + 1 }}</td>
-        <td class="td-name">
+        <td
+          class="td-name"
+          style="white-space: nowrap; text-overflow: ellipsis; overflow: hidden"
+        >
           <img
             [src]="urlImage + pro.images"
             width="35"
             height="35"
             style="border-radius: 10px"
           />
-          {{ pro.nameProduct }}
+          <span [tooltip]="pro.nameProduct ? pro.nameProduct : ''">
+            {{ pro.nameProduct }}</span
+          >
         </td>
-        <td class="td-code">{{ pro.codeProduct }}</td>
+        <td class="td-code">
+          {{ pro.codeProduct }}
+        </td>
 
-        <td class="td-price">{{ pro.price }}</td>
+        <td class="td-price" style="text-align: right">
+          {{ pro.price | number }}
+        </td>
 
-        <td class="td-note">{{ pro.descriptions }}</td>
+        <td
+          class="td-note"
+          style="white-space: nowrap; text-overflow: ellipsis; overflow: hidden"
+        >
+          {{ pro.descriptions }}
+        </td>
         <td class="td-handle">
           <div
             style="
