@@ -20,7 +20,7 @@ export class ProductComponentComponent implements OnInit {
     this.getProduct();
   }
   getProduct() {
-    this.productService.getAllProuct().subscribe((res: any) => {
+    this.productService.getAllProduct().subscribe((res: any) => {
       if (res.success == true) {
         this.slice = res.product;
         this.array = this.slice.slice(0, 4);

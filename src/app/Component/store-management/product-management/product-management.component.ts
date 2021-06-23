@@ -76,7 +76,7 @@ export class ProductManagementComponent implements OnInit {
   confirmDel(res) {
     if (res == true) {
       this.productService
-        .deleteProuctID(this.id_product)
+        .deleteProductID(this.id_product)
         .subscribe((res: any) => {
           if (res.success == true) {
             this.id_product = 0;
@@ -94,7 +94,7 @@ export class ProductManagementComponent implements OnInit {
   }
 
   getAllProduct() {
-    this.productService.getAllProuct().subscribe((res: any) => {
+    this.productService.getAllProduct().subscribe((res: any) => {
       if (res.success == true) {
         this.product = res.product as Product[];
         console.log(this.product);

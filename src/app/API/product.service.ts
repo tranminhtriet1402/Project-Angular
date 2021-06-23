@@ -12,24 +12,24 @@ import { Product } from '../Models/product';
 export class ProductService {
   constructor(private http: HttpClient) {}
   //has check
-  getAllProuct() {
+  getAllProduct() {
     return this.http.get(environment.backend + '/Products/');
   }
-  getAllProuctOnCate(id: number) {
+  getAllProductOnCate(id: number) {
     return this.http.get(environment.backend + '/getProductOnCate/' + id);
   }
   //has check
-  getProuctID(id: number) {
+  getProductID(id: number) {
     return this.http.get(environment.backend + '/Products/' + id);
   }
   //has check
-  addProuct(product: Product) {
+  addProduct(product: Product) {
     return this.http.post(environment.backend + '/Products/', product);
   }
-  deleteProuctID(id: number) {
+  deleteProductID(id: number) {
     return this.http.delete(environment.backend + '/Products/' + id);
   }
-  updateProuctID(id: number, product: Product) {
+  updateProductID(id: number, product: Product) {
     return this.http.put(environment.backend + '/Products/' + id, product);
   }
   updateImageProduct(id: number, formData: FormData) {

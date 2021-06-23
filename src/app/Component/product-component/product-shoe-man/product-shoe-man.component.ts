@@ -20,7 +20,7 @@ export class ProductShoeManComponent implements OnInit {
   }
 
   getAllproduct() {
-    this.productService.getAllProuctOnCate(11).subscribe((res: any) => {
+    this.productService.getAllProductOnCate(11).subscribe((res: any) => {
       if (res.success == true) {
         this.products = res.product as Product[];
         console.log(res);

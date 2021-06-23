@@ -69,7 +69,7 @@ export class ModalCreateProductComponent implements OnInit {
 
   //Get api
   getIDProduct() {
-    this.productService.getProuctID(this.id_product).subscribe((res: any) => {
+    this.productService.getProductID(this.id_product).subscribe((res: any) => {
       if (res.success == true) {
         this.product = res.product[0];
         this.formcreate.patchValue({
@@ -104,7 +104,7 @@ export class ModalCreateProductComponent implements OnInit {
 
     this.product.descriptions = this.formcreate.controls['descriptions'].value;
     if (this.urlUpdate) {
-      this.productService.addProuct(this.product).subscribe((res: any) => {
+      this.productService.addProduct(this.product).subscribe((res: any) => {
         if (res) {
           this.id_update = res.idProduct;
           const formData: FormData = new FormData();
@@ -167,7 +167,7 @@ export class ModalCreateProductComponent implements OnInit {
     this.product.price = this.formcreate.controls['price'].value;
 
     this.productService
-      .updateProuctID(this.product.idProduct, this.product)
+      .updateProductID(this.product.idProduct, this.product)
       .subscribe((res: any) => {
         if (res.message == true) {
         }

@@ -18,7 +18,7 @@ export class ProductShoeWomenComponent implements OnInit {
     this.getAllproduct();
   }
   getAllproduct() {
-    this.productService.getAllProuctOnCate(7).subscribe((res: any) => {
+    this.productService.getAllProductOnCate(7).subscribe((res: any) => {
       if (res.success == true) {
         this.products = res.product as Product[];
         console.log(res);

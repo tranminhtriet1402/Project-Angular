@@ -39,7 +39,7 @@ export class DetailProductComponent implements OnInit {
 
   getDetailProduct() {
     if (this.idProduct) {
-      this.productService.getProuctID(this.idProduct).subscribe((res: any) => {
+      this.productService.getProductID(this.idProduct).subscribe((res: any) => {
         if (res.success) {
           this.product = res.product[0];
           this.categoryService
@@ -55,7 +55,7 @@ export class DetailProductComponent implements OnInit {
   }
 
   getProduct() {
-    this.productService.getAllProuct().subscribe((res: any) => {
+    this.productService.getAllProduct().subscribe((res: any) => {
       if (res.success == true) {
         this.slice = res.product;
         this.array = this.slice.slice(4, 8);
