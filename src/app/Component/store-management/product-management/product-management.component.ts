@@ -64,6 +64,7 @@ export class ProductManagementComponent implements OnInit {
         this.isOpen = false;
       }
     } else {
+      this.getAllProduct();
       this.isOpen = false;
     }
   }

@@ -29,6 +29,7 @@ export class ProductShoeManComponent implements OnInit {
   }
   //paging
   pageChanged(data) {
+    window.scroll(0, 0);
     this.currentPage = data;
   }
   changePageSize($event) {

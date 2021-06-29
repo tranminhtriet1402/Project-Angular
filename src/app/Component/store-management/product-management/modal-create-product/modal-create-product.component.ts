@@ -354,6 +354,12 @@ export class ModalCreateProductComponent implements OnInit {
     }
   }
 
+  //
+  changeInput(data) {
+    data.value = data.value.replace(/-/g, '');
+    this.formcreate.controls['price'].setValue(data.value);
+  }
+
   //Get option category
   getAllCate() {
     this.categoryService.getAllCategory().subscribe((res: any) => {
